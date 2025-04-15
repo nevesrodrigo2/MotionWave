@@ -1,4 +1,4 @@
-package src.interfaces;
+package motionwave.interfaces;
 
 public interface ISong {
 

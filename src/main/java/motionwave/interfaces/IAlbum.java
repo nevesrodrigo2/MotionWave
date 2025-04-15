@@ -1,8 +1,8 @@
-package src.interfaces;
+package motionwave.interfaces;
 
 public interface IAlbum {
 
-    public void addSong(String filePath);
+    public boolean addSong(String filePath);
 
     public void removeSong(String songName);
 

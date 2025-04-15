@@ -1,12 +1,12 @@
-package src.interfaces;
+package motionwave.interfaces;
 
-public interface IMusicLibrary {
+public interface IMusicLibrary extends Iterable <IAlbum> {
 
-    public void addAlbum(String albumName, String artistName);
+    public void importAlbums(String filePath);
 
-    public void removeAlbum(String albumName, String artistName);
+    public void removeAlbum(IAlbum album);
 
-    public void addSong(String filePath, String albumName, String artistName);
+    public boolean addSong(String filePath, String albumName, String artistName);
 
     public void removeSong(String songName, String albumName, String artistName);
 
