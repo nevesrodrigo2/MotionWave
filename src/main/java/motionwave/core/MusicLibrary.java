@@ -27,13 +27,13 @@ public class MusicLibrary implements IMusicLibrary {
     }
 
     @Override
-    public boolean addSong(String filePath, String albumName, String artistName) {
+    public boolean addSong(String filePath) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'addSong'");
     }
 
     @Override
-    public void removeSong(String songName, String albumName, String artistName) {
+    public void removeSong(ISong song) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'removeSong'");
     }
@@ -60,5 +60,7 @@ public class MusicLibrary implements IMusicLibrary {
     public Iterator<IAlbum> iterator() {
         return albums.iterator();
     }
+
+    
     
 }
