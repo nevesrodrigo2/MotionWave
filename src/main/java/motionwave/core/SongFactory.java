@@ -11,13 +11,12 @@ import org.jaudiotagger.audio.exceptions.ReadOnlyFileException;
 import org.jaudiotagger.tag.FieldKey;
 import org.jaudiotagger.tag.Tag;
 import org.jaudiotagger.tag.TagException;
-
-import motionwave.interfaces.ISong;
+ 
 
 public enum SongFactory {
     INSTANCE;
 
-    public ISong createSong(String filepath) {
+    public Song createSong(String filepath) {
         File file = new File(filepath);
         AudioFile audioFile;
         try {

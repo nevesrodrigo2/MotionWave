@@ -3,7 +3,10 @@ package motionwave.interfaces;
 /**
  * Represents a music library that contains albums and songs.
  * Provides methods to manage albums and retrieve album details.
+ * 
+ * @author nevesrodrigo2 (Rodrigo Neves)
  */
+
 public interface IMusicLibrary extends Iterable<IAlbum> {
 
     /**

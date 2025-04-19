@@ -4,12 +4,16 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-public class SongTest {
+/**
+ * Test class for the Song class.
+ * 
+ * @author nevesrodrigo2 (Rodrigo Neves)
+ */
+public class SongTest { 
 
-    private Song song = (Song) SongFactory.INSTANCE.createSong("C:\\Users\\n" + //
-                "eves\\Documents\\MEGA\\MotionWave\\src\\main\\resources\\wash away\\08 - hello euphoria - outside.flac");
-
-    @Test
+    private Song song = SongFactory.INSTANCE.createSong("src\\main\\resources\\wash away\\08 - hello euphoria - outside.flac");
+ 
+    @Test 
     public void nameTest() {
         assertEquals("outside", song.getSongName());
     }

@@ -14,9 +14,9 @@ public class Album implements IAlbum {
     private int year;
     private Duration totalDuration;
 
-    private ArrayList <ISong> songs;
+    private ArrayList<ISong> songs;
 
-    public Album (String title, String artist, int numberOfTracks, String genre, int year) {
+    public Album(String title, String artist, int numberOfTracks, String genre, int year) {
         this.title = title;
         this.artist = artist;
         this.numberOfTracks = numberOfTracks;
@@ -27,15 +27,24 @@ public class Album implements IAlbum {
     }
 
     @Override
-    public boolean addSong(String filePath) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addSong'");
+    public boolean addSong(ISong song) {
+
+        if (song != null && !songs.contains(song)) {
+            songs.add(song);
+            numberOfTracks++;
+            setDuration(); // Update the total duration of the album
+            return true;
+        }
+        return false; // Song was not added (either null or already exists in the album)
     }
 
     @Override
-    public void removeSong(ISong songName) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'removeSong'");
+    public void removeSong(ISong song) {
+        if (songs.contains(song)) {
+            songs.remove(song);
+            numberOfTracks--;
+            setDuration(); // Update the total duration of the album
+        }
     }
 
     @Override
@@ -80,7 +89,7 @@ public class Album implements IAlbum {
                 return song;
             }
         }
-        return null; // or throw an exception if preferred
+        return null;
     }
 
     @Override
@@ -89,15 +98,17 @@ public class Album implements IAlbum {
     }
 
     /**
-     * Sets the duration of the album by summing up the durations of all songs in the album.
-     * This method should be called whenever a song is added or removed from the album.
+     * Sets the duration of the album by summing up the durations of all songs in
+     * the album.
+     * This method should be called whenever a song is added or removed from the
+     * album.
      * 
      */
     private void setDuration() {
-        int totalDuration = 0;
-        for(ISong song : songs) {
-            totalDuration += song.getDuration().getTotalSeconds();
+        int totalDurationTime = 0;
+        for (ISong song : songs) {
+            totalDurationTime += song.getDuration().getTotalSeconds();
         }
-        this.totalDuration = new Duration(totalDuration);
+        this.totalDuration = new Duration(totalDurationTime);
     }
 }

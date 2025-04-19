@@ -5,6 +5,8 @@ import motionwave.core.Duration;
 /**
  * Represents an album in a music library.
  * Provides methods to manage songs and retrieve album details.
+ * 
+ * @author nevesrodrigo2 (Rodrigo Neves)
  */
 public interface IAlbum extends Iterable<ISong> {
 
@@ -15,14 +17,14 @@ public interface IAlbum extends Iterable<ISong> {
      * @param filePath The file path of the song to add.
      * @return true if the song was successfully added, false otherwise.
      */
-    public boolean addSong(String filePath);
+    public boolean addSong(ISong song);
 
     /**
      * Removes a song from the album by its name.
      *
      * @param songName The name of the song to remove.
      */
-    public void removeSong(ISong songName);
+    public void removeSong(ISong song);
 
     /**
      * Gets the name of the album.

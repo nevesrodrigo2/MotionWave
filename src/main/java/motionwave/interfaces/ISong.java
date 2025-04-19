@@ -5,6 +5,8 @@ import motionwave.core.Duration;
 /**
  * Represents a song in a music library.
  * Provides methods to retrieve song details and metadata.
+ * 
+ * @author nevesrodrigo2 (Rodrigo Neves)
  */
 public interface ISong {
 

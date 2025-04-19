@@ -5,6 +5,8 @@ package motionwave.core;
  * seconds.
  * Provides methods to create a duration from total seconds and to format the
  * duration as a string.
+ * 
+ * @author nevesrodrigo2 (Rodrigo Neves)
  */
 public class Duration {
     private int seconds;
